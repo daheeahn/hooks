@@ -1,3 +1,5 @@
+import { useEffect, useState, useRef } from "react";
+
 export const useAxios = (options, axiosInstance = defaultAxios) => {
   const [state, setState] = useState({
     loading: true,
@@ -29,7 +31,7 @@ export const useAxios = (options, axiosInstance = defaultAxios) => {
       .catch(error => {
         setState({ ...state, loading: false, error });
       });
-  }, [trigger]);
+  }, [trigger]); // trigger가 발생됐다 ! 버튼 클릭함으로써!!!! 그래서 useEffect가 다시 실행된다!!!!
   return { ...state, refetch };
 };
 

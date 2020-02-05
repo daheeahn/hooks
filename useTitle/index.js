@@ -1,1 +1,1 @@
-export * from './useTitle'
+export { useTitle as default } from "./useTitle";

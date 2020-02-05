@@ -1,3 +1,5 @@
+import { useEffect, useState, useRef } from "react";
+
 export const useNetwork = onChange => {
   const [status, setStatus] = useState(navigator.onLine); // true or false를 뱉는다.
   const handleChange = () => {
